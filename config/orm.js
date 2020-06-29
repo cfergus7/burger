@@ -1,6 +1,15 @@
 // Import MySQL connect
 var connection = require("../config/connection.js");
 
+// IDK if i need this or not
+// function printQuestionMarks(num) {
+//     var arr = [];
+//     for (var i = 0; i < num; i++) {
+//         arr.push("?");
+//     }
+//     return arr.toString();
+// }
+
 var orm = {
     selectAll: function(tableInput, cb) {
 		var queryString = "SELECT * FROM " + tableInput + ";";
