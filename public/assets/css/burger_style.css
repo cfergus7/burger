@@ -1,0 +1,11 @@
+body {
+    background-image: url("../images/02_burger.jpg")
+}
+
+.jumbotron {
+    background-color: antiquewhite;
+}
+
+.card {
+    background-color: antiquewhite;
+}

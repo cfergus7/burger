@@ -1,1 +1,51 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1 class="display-4">EAT DA BURGER!!</h1>
+        <p class="lead">Order up your favorite Burger!!!</p>
+        <hr class="my-4">
+
+        <div class="row justify-content-center">
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="burger"></label>
+                    <input type="text" id="bname" name="name">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-warning text-align-center" type="submit">Order Burger</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        {{!-- Burgers to be eaten --}}
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Ready to Eat</h2>
+                    <hr class="my-4">
+                    {{#each burger}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/unless}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{!-- Eaten burgers --}}
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Devoured Burgers</h2>
+                    <hr class="my-4">
+                    {{#each burger}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block-devoured devoured=true}}
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
