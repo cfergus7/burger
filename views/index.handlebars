@@ -1,39 +1,51 @@
-<h1>Eat Da Burger!</h1>
-<container>
-    <div id="need">
-        <h2>Need Da Burg!</h2>
+<div class="container">
 
-        <ul>
-            {{#each burger_name}}
-            {{#unless devoured}}
-            {{> burger_name/burger_name-block devoured=true}}
-            {{/unless}}
-            {{/each}}
-        </ul>
-    </div>
+    <div class="jumbotron text-center">
+        <h1 class="display-4">EAT DA BURGER!!</h1>
+        <p class="lead">Order up your favorite Burger!!!</p>
+        <hr class="my-4">
 
-    <div id="ate">
-        <h2>Ate Da Burg!</h2>
-
-        <ul>
-            {{#each burger_name}}
-            {{#if devoured}}
-            {{> burger_name/burger_name-block devoured=false}}
-            {{/if}}
-            {{/each}}
-        </ul>
-    </div>
-</container>
-
-<div id="add">
-    <h2>Add A Burg!</h2>
-    <form class="create-form">
-
-        <div class="form-group">
-            <label for="ca">Burger Name:</label>
-            <input type="text" id="ca" name="name">
+        <div class="row justify-content-center">
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="burger"></label>
+                    <input type="text" id="bname" name="name">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-warning text-align-center" type="submit">Order Burger</button>
+                </div>
+            </form>
         </div>
 
-        <button type="submit">Add Burg!</button>
-    </form>
+    </div>
+    <div class="row">
+        {{!-- Burgers to be eaten --}}
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Ready to Eat</h2>
+                    <hr class="my-4">
+                    {{#each burger}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/unless}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{!-- Eaten burgers --}}
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Devoured Burgers</h2>
+                    <hr class="my-4">
+                    {{#each burger}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block-devoured devoured=true}}
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
