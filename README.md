@@ -12,8 +12,7 @@
   
   
   ## Description
-  Keep track of a burger eating contest.
-
+  Keep track of a burgers to cook, eat, then to cook again. This app uses hadlebars and shows how an ORM works.
   
   ## Install
 
